@@ -8,12 +8,8 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(
-            create: (_) => ThemeManager(),
-          ),
-        ],
+    return ChangeNotifierProvider<ThemeManager>(
+        create: (_) => ThemeManager(),
         child: Consumer<ThemeManager>(builder: (context, theme, child) {
           return MaterialApp(
               title: 'Theme App',
